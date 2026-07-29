@@ -1,0 +1,384 @@
+import { a as __toESM } from "../_runtime.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/portrait-BOWx7Tqc.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var translations = {
+	fr: {
+		nav: {
+			brand: "Portfolio",
+			about: "À propos",
+			stack: "Compétences",
+			journey: "Parcours",
+			projects: "Projets",
+			services: "Services",
+			contact: "Contact",
+			contactButton: "Contact",
+			contactMobile: "Me contacter",
+			ariaLabel: "Navigation principale",
+			closeMenu: "Fermer le menu",
+			openMenu: "Ouvrir le menu"
+		},
+		theme: { toggle: "Basculer le thème" },
+		lang: { switchTo: "Passer en anglais" },
+		hero: {
+			decorative: "portfolio",
+			location: "Antananarivo, Madagascar",
+			line1: "Concevoir",
+			line2: "l'avenir,",
+			line3: "façonner",
+			line4: "les idées,",
+			lineEm: "magnifier le code.",
+			cta: "Voir le portfolio",
+			subtitle: "Full Stack Developer, Mobile Engineer & UI/UX Designer.",
+			description: "Chaque projet est livré avec clarté, précision et style.",
+			tech1: "React · Next.js · Node",
+			tech2: "React Native · Expo",
+			tech3: "Figma · Motion Design",
+			bottomLeft: "Full Stack Capabilities",
+			bottomRight: "Design · Code · Motion",
+			badge: "★ 2026"
+		},
+		about: {
+			eyebrow: "À propos",
+			titleStart: "Un artisan du",
+			titleCode: "code",
+			titleAnd: "et du",
+			titleDesign: "design",
+			titleEnd: ".",
+			p1: "Développeur Full Stack passionné, je transforme des idées en produits digitaux à fort impact. Mon approche combine rigueur d'ingénieur et sensibilité de designer : chaque interface est pensée pour être belle, rapide et intuitive.",
+			p2: "J'ai eu la chance de collaborer avec des startups, des ONG et des entreprises pour livrer des applications web et mobiles utilisées au quotidien par des milliers d'utilisateurs.",
+			stats: {
+				projects: "Projets livrés",
+				technologies: "Technologies",
+				experience: "Années d'expérience",
+				satisfaction: "Clients satisfaits"
+			}
+		},
+		skills: {
+			eyebrow: "Compétences",
+			title: "Ma stack technique.",
+			databases: "Bases de données"
+		},
+		experience: {
+			eyebrow: "Parcours",
+			title: "Expériences.",
+			items: [
+				{
+					date: "2024 — Présent",
+					role: "Full Stack Developer",
+					company: "Freelance",
+					description: "Conception et développement d'applications web et mobiles pour clients internationaux. Focus sur la performance, l'accessibilité et le design."
+				},
+				{
+					date: "2023 — 2024",
+					role: "Développeur Web & Mobile",
+					company: "Fanainga",
+					description: "Développement de la plateforme e-learning Moodle et de l'application mobile Arise en React Native."
+				},
+				{
+					date: "2022 — 2023",
+					role: "Développeur Frontend",
+					company: "Kolo Disagara",
+					description: "Refonte complète du site vitrine avec React, mise en place d'un design system et intégration CMS."
+				},
+				{
+					date: "2021 — 2022",
+					role: "Développeur Backend Java",
+					company: "Projet RH",
+					description: "Application de gestion des ressources humaines en Java Spring Boot avec API REST sécurisée."
+				}
+			]
+		},
+		projects: {
+			eyebrow: "Portfolio",
+			titleStart: "Projets",
+			titleAccent: "sélectionnés",
+			titleEnd: ".",
+			items: [
+				{
+					title: "Application RH",
+					tag: "Web · Entreprise",
+					description: "Système complet de gestion des ressources humaines : employés, congés, paie, évaluations."
+				},
+				{
+					title: "Kolo Disagara",
+					tag: "Site vitrine",
+					description: "Site vitrine artisanal élégant, storytelling visuel et catalogue produit responsive."
+				},
+				{
+					title: "Moodle Fanainga",
+					tag: "Plateforme e-learning",
+					description: "Plateforme de formation en ligne personnalisée sur Moodle avec thème et modules sur mesure."
+				},
+				{
+					title: "Arise",
+					tag: "Mobile · React Native",
+					description: "Application mobile cross-platform avec expérience premium, animations fluides et sync temps réel."
+				},
+				{
+					title: "Système d'emails Pro",
+					tag: "Backend · Templates",
+					description: "Infrastructure d'envoi d'emails transactionnels avec templates responsives et tracking."
+				}
+			]
+		},
+		services: {
+			eyebrow: "Services",
+			title: "Ce que je peux faire pour vous.",
+			items: [
+				{
+					title: "Développement Web",
+					description: "Sites vitrines, SaaS et plateformes sur mesure avec React et Next.js."
+				},
+				{
+					title: "Applications Mobile",
+					description: "Apps iOS & Android performantes en React Native, du concept au store."
+				},
+				{
+					title: "UI/UX Design",
+					description: "Interfaces modernes, design systems cohérents et prototypes interactifs."
+				},
+				{
+					title: "Optimisation & SEO",
+					description: "Performance web, Core Web Vitals et référencement technique avancé."
+				}
+			]
+		},
+		contact: {
+			eyebrow: "Contact",
+			titleStart: "Discutons de votre",
+			titleAccent: "projet",
+			titleEnd: ".",
+			form: {
+				name: "Nom",
+				namePlaceholder: "Votre nom",
+				email: "Email",
+				emailPlaceholder: "vous@email.com",
+				subject: "Sujet",
+				subjectPlaceholder: "Sujet du projet",
+				message: "Message",
+				messagePlaceholder: "Parlez-moi de votre projet...",
+				submit: "Envoyer le message",
+				success: "Merci ! Votre message a bien été envoyé."
+			},
+			details: {
+				phone: "Téléphone",
+				location: "Localisation",
+				social: "Réseaux"
+			}
+		},
+		footer: {
+			title: "Let's build together.",
+			credit: "Conçu & développé avec passion."
+		}
+	},
+	en: {
+		nav: {
+			brand: "Portfolio",
+			about: "About",
+			stack: "Stack",
+			journey: "Journey",
+			projects: "Projects",
+			services: "Services",
+			contact: "Contact",
+			contactButton: "Contact",
+			contactMobile: "Get in touch",
+			ariaLabel: "Main navigation",
+			closeMenu: "Close menu",
+			openMenu: "Open menu"
+		},
+		theme: { toggle: "Toggle theme" },
+		lang: { switchTo: "Switch to French" },
+		hero: {
+			decorative: "portfolio",
+			location: "Antananarivo, Madagascar",
+			line1: "Design",
+			line2: "the future,",
+			line3: "shape",
+			line4: "ideas,",
+			lineEm: "elevate the code.",
+			cta: "View the portfolio",
+			subtitle: "Full Stack Developer, Mobile Engineer & UI/UX Designer.",
+			description: "Every project is delivered with clarity, precision, and style.",
+			tech1: "React · Next.js · Node",
+			tech2: "React Native · Expo",
+			tech3: "Figma · Motion Design",
+			bottomLeft: "Full Stack Capabilities",
+			bottomRight: "Design · Code · Motion",
+			badge: "★ 2026"
+		},
+		about: {
+			eyebrow: "About",
+			titleStart: "A craftsman of",
+			titleCode: "code",
+			titleAnd: "and",
+			titleDesign: "design",
+			titleEnd: ".",
+			p1: "Full Stack Developer passionate about turning ideas into high-impact digital products. My approach combines engineering rigor with designer sensitivity: every interface is crafted to be beautiful, fast, and intuitive.",
+			p2: "I've had the opportunity to collaborate with startups, NGOs, and companies to deliver web and mobile applications used daily by thousands of users.",
+			stats: {
+				projects: "Projects delivered",
+				technologies: "Technologies",
+				experience: "Years of experience",
+				satisfaction: "Satisfied clients"
+			}
+		},
+		skills: {
+			eyebrow: "Skills",
+			title: "My tech stack.",
+			databases: "Databases"
+		},
+		experience: {
+			eyebrow: "Journey",
+			title: "Experience.",
+			items: [
+				{
+					date: "2024 — Present",
+					role: "Full Stack Developer",
+					company: "Freelance",
+					description: "Design and development of web and mobile applications for international clients. Focus on performance, accessibility, and design."
+				},
+				{
+					date: "2023 — 2024",
+					role: "Web & Mobile Developer",
+					company: "Fanainga",
+					description: "Development of the Moodle e-learning platform and the Arise mobile application in React Native."
+				},
+				{
+					date: "2022 — 2023",
+					role: "Frontend Developer",
+					company: "Kolo Disagara",
+					description: "Full redesign of the showcase site with React, implementation of a design system, and CMS integration."
+				},
+				{
+					date: "2021 — 2022",
+					role: "Java Backend Developer",
+					company: "Projet RH",
+					description: "Human resources management application built with Java Spring Boot with a secure REST API."
+				}
+			]
+		},
+		projects: {
+			eyebrow: "Portfolio",
+			titleStart: "Selected",
+			titleAccent: "projects",
+			titleEnd: ".",
+			items: [
+				{
+					title: "HR Application",
+					tag: "Web · Enterprise",
+					description: "Complete human resources management system: employees, leaves, payroll, evaluations."
+				},
+				{
+					title: "Kolo Disagara",
+					tag: "Showcase site",
+					description: "Elegant artisanal showcase site with visual storytelling and responsive product catalog."
+				},
+				{
+					title: "Moodle Fanainga",
+					tag: "E-learning platform",
+					description: "Customized online training platform built on Moodle with bespoke theme and modules."
+				},
+				{
+					title: "Arise",
+					tag: "Mobile · React Native",
+					description: "Cross-platform mobile application with premium experience, smooth animations, and real-time sync."
+				},
+				{
+					title: "Pro Email System",
+					tag: "Backend · Templates",
+					description: "Transactional email infrastructure with responsive templates and tracking."
+				}
+			]
+		},
+		services: {
+			eyebrow: "Services",
+			title: "What I can do for you.",
+			items: [
+				{
+					title: "Web Development",
+					description: "Showcase sites, SaaS, and custom platforms built with React and Next.js."
+				},
+				{
+					title: "Mobile Applications",
+					description: "High-performance iOS & Android apps in React Native, from concept to store."
+				},
+				{
+					title: "UI/UX Design",
+					description: "Modern interfaces, consistent design systems, and interactive prototypes."
+				},
+				{
+					title: "Optimization & SEO",
+					description: "Web performance, Core Web Vitals, and advanced technical SEO."
+				}
+			]
+		},
+		contact: {
+			eyebrow: "Contact",
+			titleStart: "Let's talk about your",
+			titleAccent: "project",
+			titleEnd: ".",
+			form: {
+				name: "Name",
+				namePlaceholder: "Your name",
+				email: "Email",
+				emailPlaceholder: "you@email.com",
+				subject: "Subject",
+				subjectPlaceholder: "Project subject",
+				message: "Message",
+				messagePlaceholder: "Tell me about your project...",
+				submit: "Send message",
+				success: "Thank you! Your message has been sent."
+			},
+			details: {
+				phone: "Phone",
+				location: "Location",
+				social: "Social"
+			}
+		},
+		footer: {
+			title: "Let's build together.",
+			credit: "Designed & developed with passion."
+		}
+	}
+};
+function getNested(obj, path) {
+	const keys = path.split(".");
+	let current = obj;
+	for (const key of keys) if (current && typeof current === "object" && key in current) current = current[key];
+	else return path;
+	if (typeof current === "string") return current;
+	return path;
+}
+var I18nContext = (0, import_react.createContext)(null);
+function I18nProvider({ children }) {
+	const [lang, setLangState] = (0, import_react.useState)("fr");
+	(0, import_react.useEffect)(() => {
+		const stored = localStorage.getItem("lang");
+		if (stored === "fr" || stored === "en") setLangState(stored);
+	}, []);
+	const setLang = (next) => {
+		setLangState(next);
+		try {
+			localStorage.setItem("lang", next);
+		} catch {}
+	};
+	const t = (path) => getNested(translations[lang], path);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(I18nContext.Provider, {
+		value: {
+			lang,
+			setLang,
+			t
+		},
+		children
+	});
+}
+function useI18n() {
+	const ctx = (0, import_react.useContext)(I18nContext);
+	if (!ctx) throw new Error("useI18n must be used within an I18nProvider");
+	return ctx;
+}
+var portrait_default = "/assets/portrait-alAKvtuH.png";
+//#endregion
+export { portrait_default as n, useI18n as r, I18nProvider as t };
