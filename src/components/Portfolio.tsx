@@ -95,21 +95,21 @@ function Section({
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   return (
-    <section id={id} ref={ref} className="relative py-24 md:py-32">
+    <section id={id} ref={ref} className="relative py-16 sm:py-20 md:py-28 lg:py-32">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mx-auto max-w-6xl px-5 sm:px-6"
+        className="mx-auto w-full max-w-6xl px-4 sm:px-6"
       >
-        <div className="mb-10 flex items-end justify-between gap-6 md:mb-12">
-          <div>
-            <div className="mb-4 flex items-center gap-3 text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground sm:text-xs sm:tracking-[0.24em]">
-              <span className="h-px w-10 bg-foreground/40" />
+        <div className="mb-8 flex min-w-0 items-end justify-between gap-6 sm:mb-10 md:mb-12">
+          <div className="min-w-0">
+            <div className="mb-4 flex min-w-0 items-center gap-3 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground sm:text-xs sm:tracking-[0.22em]">
+              <span className="h-px w-6 shrink-0 bg-foreground/40 sm:w-10" />
               [{eyebrow}]
             </div>
             <h2
-              className="text-3xl font-normal leading-[1.05] tracking-tight sm:text-4xl md:text-6xl lg:text-7xl"
+              className="text-3xl font-normal leading-[1.06] tracking-tight sm:text-4xl md:text-6xl lg:text-7xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {title}
@@ -181,24 +181,24 @@ export default function Portfolio() {
 
       <Nav />
 
-      <header className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24 md:pt-40 md:pb-40">
+      <header className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-24 md:pt-36 md:pb-32 lg:pt-40 lg:pb-40">
         <div aria-hidden className="pointer-events-none absolute inset-0">
           <div className="absolute inset-y-0 left-[8%] border-l border-dashed border-foreground/15 md:left-[18%]" />
           <div className="absolute inset-y-0 right-[8%] border-l border-dashed border-foreground/15 md:right-[18%]" />
         </div>
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-2 select-none whitespace-nowrap text-center text-[26vw] leading-none tracking-tighter text-foreground/95 opacity-90 md:bottom-4 md:text-[22vw]"
+          className="pointer-events-none absolute inset-x-0 bottom-2 select-none whitespace-nowrap text-center text-[28vw] leading-none tracking-tighter text-foreground/95 opacity-80 sm:text-[26vw] md:bottom-4 md:text-[22vw] md:opacity-90"
           style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic" }}
         >
           {t("hero.decorative")}
         </div>
-        <div className="relative mx-auto flex max-w-6xl items-center justify-center px-5 text-[10px] uppercase tracking-[0.22em] text-muted-foreground sm:px-6 sm:text-xs sm:tracking-[0.28em]">
+        <div className="relative mx-auto flex max-w-6xl items-center justify-center px-4 text-center text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:px-6 sm:text-xs sm:tracking-[0.24em]">
           [ {t("hero.location")} ]
         </div>
         <motion.div
           style={{ y: heroY }}
-          className="relative mx-auto mt-8 grid max-w-6xl grid-cols-1 items-start gap-8 px-5 sm:mt-10 sm:gap-10 sm:px-6 md:mt-16 md:grid-cols-[1.1fr_0.9fr_1.1fr]"
+          className="relative mx-auto mt-8 grid w-full max-w-6xl grid-cols-1 items-start gap-8 px-4 sm:mt-10 sm:gap-10 sm:px-6 md:mt-16 md:grid-cols-[minmax(0,1.1fr)_minmax(14rem,0.9fr)_minmax(0,1.1fr)]"
         >
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -206,7 +206,7 @@ export default function Portfolio() {
             transition={{ delay: 0.2, duration: 0.7 }}
           >
             <h1
-              className="text-[2.75rem] font-normal leading-[1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+              className="text-[clamp(2.4rem,16vw,4rem)] font-normal leading-[1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               {t("hero.line1")} <br />
@@ -217,7 +217,7 @@ export default function Portfolio() {
             </h1>
             <a
               href="#projects"
-              className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-foreground sm:mt-10 sm:text-sm sm:tracking-[0.24em]"
+              className="mt-8 inline-flex max-w-full items-center gap-2 text-xs uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground sm:mt-10 sm:text-sm sm:tracking-[0.22em]"
             >
               [ {t("hero.cta")} ]
             </a>
@@ -227,7 +227,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: -20, rotate: -2 }}
             animate={{ opacity: 1, y: 0, rotate: 0 }}
             transition={{ delay: 0.35, duration: 0.8 }}
-            className="relative mx-auto w-full max-w-[16rem] sm:max-w-xs"
+            className="relative mx-auto w-full max-w-[15rem] sm:max-w-xs"
           >
             <div className="relative overflow-hidden bg-cream/90 p-3 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.35)]" style={{ background: "var(--cream)" }}>
               <img
@@ -243,7 +243,7 @@ export default function Portfolio() {
               />
             </div>
             <div
-              className="absolute -right-4 -top-4 flex h-16 w-16 items-center justify-center rounded-full border border-foreground/40 text-[10px] uppercase tracking-widest"
+              className="absolute -right-2 -top-3 flex h-14 w-14 items-center justify-center rounded-full border border-foreground/40 text-[9px] uppercase tracking-widest sm:-right-4 sm:-top-4 sm:h-16 sm:w-16 sm:text-[10px]"
               style={{ background: "var(--background)", fontFamily: "'Cormorant Garamond', serif" }}
             >
               {t("hero.badge")}
@@ -254,19 +254,19 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="md:pt-10"
+            className="min-w-0 md:pt-10"
           >
             <div
-              className="text-5xl font-normal leading-none tracking-tight sm:text-6xl md:text-7xl"
+              className="text-4xl font-normal leading-none tracking-tight sm:text-6xl md:text-7xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               50<sup className="text-2xl align-super">+</sup>
             </div>
-            <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground md:max-w-xs">
               {t("hero.subtitle")}<br />
               {t("hero.description")}
             </p>
-            <div className="mt-8 space-y-1 text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:text-xs sm:tracking-[0.24em]">
+            <div className="mt-7 space-y-1 text-[11px] uppercase tracking-[0.14em] text-muted-foreground sm:text-xs sm:tracking-[0.22em]">
               <div>— {t("hero.tech1")}</div>
               <div>— {t("hero.tech2")}</div>
               <div>— {t("hero.tech3")}</div>
@@ -274,7 +274,7 @@ export default function Portfolio() {
           </motion.div>
         </motion.div>
 
-        <div className="relative mx-auto mt-12 flex max-w-6xl flex-wrap items-center justify-between gap-2 px-5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:px-6 sm:text-xs sm:tracking-[0.24em] md:mt-24">
+        <div className="relative mx-auto mt-12 flex max-w-6xl flex-col items-start justify-between gap-2 px-4 text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:flex-row sm:items-center sm:px-6 sm:text-xs sm:tracking-[0.22em] md:mt-20 lg:mt-24">
           <span>{t("hero.bottomLeft")}</span>
           <span>{t("hero.bottomRight")}</span>
         </div>
@@ -292,12 +292,12 @@ export default function Portfolio() {
           </>
         }
       >
-        <div className="grid gap-10 md:grid-cols-2">
-          <p className="text-lg leading-relaxed text-muted-foreground">{t("about.p1")}</p>
-          <p className="text-lg leading-relaxed text-muted-foreground">{t("about.p2")}</p>
+        <div className="grid gap-6 md:grid-cols-2 md:gap-10">
+          <p className="min-w-0 text-base leading-relaxed text-muted-foreground sm:text-lg">{t("about.p1")}</p>
+          <p className="min-w-0 text-base leading-relaxed text-muted-foreground sm:text-lg">{t("about.p2")}</p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:mt-14 sm:gap-4 md:mt-16 md:grid-cols-4">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -305,10 +305,10 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass rounded-2xl p-6"
+              className="glass min-w-0 rounded-2xl p-5 sm:p-6"
             >
               <div
-                className="text-4xl font-semibold text-gradient md:text-5xl"
+                className="text-3xl font-semibold text-gradient sm:text-4xl md:text-5xl"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {s.value}
@@ -332,19 +332,19 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl glass p-6 transition-all hover:border-primary/40"
+              className="group relative min-w-0 overflow-hidden rounded-2xl glass p-5 transition-all hover:border-primary/40 sm:p-6"
             >
               <div
                 className="absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-3xl transition-opacity group-hover:opacity-40"
                 style={{ background: "var(--gradient-brand)" }}
               />
               <s.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
-              <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
+              <h3 className="mt-4 text-lg font-semibold sm:text-xl">{s.title}</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {s.items.map((it) => (
                   <span
                     key={it}
-                    className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs text-muted-foreground"
+                    className="max-w-full rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs text-muted-foreground"
                   >
                     {it}
                   </span>
@@ -362,7 +362,7 @@ export default function Portfolio() {
       >
         <div className="relative">
           <div
-            className="absolute left-4 top-2 bottom-2 w-px md:left-1/2"
+            className="absolute left-3 top-2 bottom-2 w-px sm:left-4 md:left-1/2"
             style={{ background: "var(--gradient-brand)", opacity: 0.4 }}
           />
           <div className="space-y-8">
@@ -373,7 +373,7 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`relative grid grid-cols-[auto_1fr] gap-6 md:grid-cols-2 md:gap-12 ${
+                className={`relative grid min-w-0 grid-cols-1 gap-4 pl-9 sm:pl-12 md:grid-cols-2 md:gap-12 md:pl-0 ${
                   i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
                 }`}
               >
@@ -382,9 +382,9 @@ export default function Portfolio() {
                 >
                   {i % 2 === 0 && <ExperienceCard e={e} />}
                 </div>
-                <div className="relative pl-12 md:pl-0">
+                <div className="relative min-w-0 md:pl-0">
                   <div
-                    className="absolute left-0 top-6 h-4 w-4 rounded-full border-2 border-background md:left-1/2 md:-translate-x-1/2"
+                    className="absolute -left-9 top-6 h-4 w-4 rounded-full border-2 border-background sm:-left-12 md:left-1/2 md:-translate-x-1/2"
                     style={{ background: "var(--gradient-brand)" }}
                   />
                   <div className="md:hidden">
@@ -413,7 +413,7 @@ export default function Portfolio() {
           </>
         }
       >
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
           {projects.map((p, i) => (
             <motion.a
               key={p.title}
@@ -424,12 +424,12 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i % 2) * 0.1 }}
-              className={`group relative flex flex-col overflow-hidden rounded-3xl glass transition-all hover:border-primary/40 ${
+              className={`group relative flex min-w-0 flex-col overflow-hidden rounded-2xl glass transition-all hover:border-primary/40 sm:rounded-3xl ${
                 i === 0 ? "md:col-span-2" : ""
               }`}
             >
               <div
-                className={`relative aspect-[16/10] overflow-hidden ${
+                className={`relative aspect-[4/3] overflow-hidden sm:aspect-[16/10] ${
                   "imageFrameClassName" in p ? (p as any).imageFrameClassName ?? "" : ""
                 }`}
               >
@@ -444,20 +444,20 @@ export default function Portfolio() {
                   }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-                <div className="absolute right-4 top-4 rounded-full glass p-3 opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="absolute right-3 top-3 rounded-full glass p-2 opacity-100 transition-opacity sm:right-4 sm:top-4 sm:p-3 md:opacity-0 md:group-hover:opacity-100">
                   <ArrowUpRight className="h-4 w-4" />
                 </div>
               </div>
-              <div className="flex flex-1 flex-col gap-4 p-6 md:p-8">
-                <div className="text-xs uppercase tracking-wider text-primary">{p.tag}</div>
-                <h3 className="text-2xl font-semibold md:text-3xl">{p.title}</h3>
-                <p className="text-muted-foreground">{p.description}</p>
-                <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-4">
-                  <div className="flex flex-wrap gap-2">
+              <div className="flex min-w-0 flex-1 flex-col gap-3 p-5 sm:gap-4 sm:p-6 md:p-8">
+                <div className="text-xs uppercase tracking-[0.12em] text-primary sm:tracking-wider">{p.tag}</div>
+                <h3 className="text-xl font-semibold sm:text-2xl md:text-3xl">{p.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{p.description}</p>
+                <div className="mt-auto flex flex-col gap-4 pt-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:pt-4">
+                  <div className="flex min-w-0 flex-wrap gap-2">
                     {p.tech.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-foreground/10 px-3 py-1 text-xs text-muted-foreground"
+                        className="max-w-full rounded-full border border-foreground/10 px-3 py-1 text-xs text-muted-foreground"
                       >
                         {t}
                       </span>
@@ -487,7 +487,7 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative flex items-start gap-6 overflow-hidden rounded-2xl glass p-8 transition-all hover:border-primary/40"
+              className="group relative flex min-w-0 flex-col gap-4 overflow-hidden rounded-2xl glass p-5 transition-all hover:border-primary/40 min-[420px]:flex-row min-[420px]:items-start sm:gap-6 sm:p-8"
             >
               <div
                 className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
@@ -495,9 +495,9 @@ export default function Portfolio() {
               >
                 <s.icon className="h-6 w-6 text-background" strokeWidth={2} />
               </div>
-              <div>
-                <h3 className="text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 text-muted-foreground">{s.description}</p>
+              <div className="min-w-0">
+                <h3 className="text-lg font-semibold sm:text-xl">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">{s.description}</p>
               </div>
             </motion.div>
           ))}
@@ -515,13 +515,13 @@ export default function Portfolio() {
           </>
         }
       >
-        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr]">
+        <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(18rem,1fr)] md:gap-8">
           <form
             onSubmit={(e) => {
               e.preventDefault();
               alert(t("contact.form.success"));
             }}
-            className="glass rounded-3xl p-8"
+            className="glass min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-6 md:p-8"
           >
             <div className="grid gap-4 md:grid-cols-2">
               <Field label={t("contact.form.name")} name="name" placeholder={t("contact.form.namePlaceholder")} />
@@ -536,12 +536,12 @@ export default function Portfolio() {
                 required
                 rows={5}
                 placeholder={t("contact.form.messagePlaceholder")}
-                className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                className="min-h-36 w-full resize-y rounded-xl border border-foreground/10 bg-foreground/5 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
               />
             </div>
             <button
               type="submit"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02] sm:w-auto"
               style={{ boxShadow: "var(--shadow-glow)" }}
             >
               {t("contact.form.submit")}
@@ -549,15 +549,15 @@ export default function Portfolio() {
             </button>
           </form>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex min-w-0 flex-col gap-4">
             <ContactCard icon={Mail} label="Email" value="mami2003nomenjanahary@gmail.com" />
             <ContactCard icon={Phone} label={t("contact.details.phone")} value="+261 34 87 464 53" />
             <ContactCard icon={MapPin} label={t("contact.details.location")} value="Antananarivo, MG" />
-            <div className="glass rounded-2xl p-6">
-              <div className="mb-4 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            <div className="glass min-w-0 rounded-2xl p-5 sm:p-6">
+              <div className="mb-4 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground sm:tracking-wider">
                 {t("contact.details.social")}
               </div>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
                 {[Github, Linkedin, Mail].map((Icon, i) => (
                   <a
                     key={i}
@@ -580,11 +580,11 @@ export default function Portfolio() {
 
 function ExperienceCard({ e }: { e: ExperienceItem }) {
   return (
-    <div className="glass rounded-2xl p-6">
-      <div className="text-xs font-medium uppercase tracking-wider text-primary">
+    <div className="glass min-w-0 rounded-2xl p-5 sm:p-6">
+      <div className="text-xs font-medium uppercase tracking-[0.12em] text-primary sm:tracking-wider">
         {e.date}
       </div>
-      <h3 className="mt-2 text-xl font-semibold">{e.role}</h3>
+      <h3 className="mt-2 text-lg font-semibold sm:text-xl">{e.role}</h3>
       <div className="text-sm text-muted-foreground">{e.company}</div>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
         {e.description}
@@ -605,8 +605,8 @@ function Field({
   placeholder?: string;
 }) {
   return (
-    <div className="mt-4 md:mt-0">
-      <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted-foreground">
+    <div className="mt-4 min-w-0 md:mt-0">
+      <label className="mb-2 block text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground sm:tracking-wider">
         {label}
       </label>
       <input
@@ -630,15 +630,15 @@ function ContactCard({
   value: string;
 }) {
   return (
-    <div className="glass flex items-center gap-4 rounded-2xl p-5">
-      <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/5">
+    <div className="glass flex min-w-0 items-center gap-4 rounded-2xl p-5">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/5">
         <Icon className="h-5 w-5 text-primary" />
       </div>
-      <div>
-        <div className="text-xs uppercase tracking-wider text-muted-foreground">
+      <div className="min-w-0">
+        <div className="text-xs uppercase tracking-[0.12em] text-muted-foreground sm:tracking-wider">
           {label}
         </div>
-        <div className="text-sm font-medium">{value}</div>
+        <div className="text-sm font-medium break-words">{value}</div>
       </div>
     </div>
   );
@@ -666,16 +666,16 @@ function Nav() {
       }`}
       aria-label={t("nav.ariaLabel")}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <a
           href="#"
-          className="flex items-center gap-2 text-lg"
+          className="flex min-w-0 items-center gap-2 text-lg"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
-          <span className="text-base">✦</span>
-          <span className="italic">{t("nav.brand")}</span>
+          <span className="shrink-0 text-base">✦</span>
+          <span className="truncate italic">{t("nav.brand")}</span>
         </a>
-        <div className="hidden items-center gap-6 px-2 py-1.5 md:flex">
+        <div className="hidden min-w-0 items-center gap-4 px-2 py-1.5 md:flex lg:gap-6">
           {NAV_IDS.map((id) => (
             <a
               key={id}
@@ -689,7 +689,7 @@ function Nav() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href="#contact"
-            className="hidden rounded-full border border-foreground/40 px-5 py-2 text-xs uppercase tracking-[0.22em] transition-colors hover:bg-foreground hover:text-background md:inline-flex"
+            className="hidden rounded-full border border-foreground/40 px-4 py-2 text-xs uppercase tracking-[0.16em] transition-colors hover:bg-foreground hover:text-background md:inline-flex lg:px-5 lg:tracking-[0.22em]"
           >
             [ {t("nav.contactButton")} ]
           </a>
@@ -697,7 +697,7 @@ function Nav() {
             type="button"
             onClick={() => setLang(lang === "fr" ? "en" : "fr")}
             aria-label={t("lang.switchTo")}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full glass text-foreground text-xs font-bold uppercase tracking-wider transition-transform hover:scale-105"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full glass text-foreground text-xs font-bold uppercase tracking-wider transition-transform hover:scale-105"
           >
             {lang === "fr" ? "EN" : "FR"}
           </button>
@@ -719,22 +719,22 @@ function Nav() {
         id="mobile-nav"
         role="dialog"
         aria-modal="true"
-        className={`fixed inset-x-0 top-[64px] z-40 mx-4 origin-top rounded-3xl glass p-6 transition-all md:hidden ${
+        className={`fixed inset-x-0 top-[64px] z-40 mx-3 max-h-[calc(100dvh-5rem)] origin-top overflow-y-auto rounded-2xl glass p-4 transition-all sm:mx-4 sm:rounded-3xl sm:p-6 md:hidden ${
           open
             ? "pointer-events-auto scale-100 opacity-100"
             : "pointer-events-none scale-95 opacity-0"
         }`}
       >
-        <ul className="flex flex-col gap-1">
+        <ul className="flex min-w-0 flex-col gap-1">
           {NAV_IDS.map((id, idx) => (
             <li key={id}>
               <a
                 href={`#${id}`}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-base text-foreground/90 transition-colors hover:bg-foreground/5"
+                className="block min-w-0 rounded-xl px-3 py-3 text-base text-foreground/90 transition-colors hover:bg-foreground/5 sm:px-4"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
-                <span className="mr-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="mr-2 text-xs uppercase tracking-[0.14em] text-muted-foreground sm:tracking-[0.2em]">
                   0{idx + 1}
                 </span>
                 [{t("nav." + id)}]
@@ -745,7 +745,7 @@ function Nav() {
         <a
           href="#contact"
           onClick={() => setOpen(false)}
-          className="mt-4 flex w-full items-center justify-center rounded-full border border-foreground/40 px-5 py-3 text-xs uppercase tracking-[0.22em]"
+          className="mt-4 flex w-full items-center justify-center rounded-full border border-foreground/40 px-5 py-3 text-center text-xs uppercase tracking-[0.14em] sm:tracking-[0.22em]"
         >
           [ {t("nav.contactMobile")} ]
         </a>
@@ -775,7 +775,7 @@ function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={t("theme.toggle")}
-      className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-full glass text-foreground transition-transform hover:scale-105"
+      className="ml-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full glass text-foreground transition-transform hover:scale-105 sm:ml-2"
     >
       {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
     </button>
@@ -790,10 +790,10 @@ function Footer() {
         className="absolute inset-x-0 -top-40 h-40 opacity-40"
         style={{ background: "var(--gradient-glow)" }}
       />
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
+        <div className="flex min-w-0 flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
           <div
-            className="text-2xl font-semibold text-gradient"
+            className="text-xl font-semibold text-gradient sm:text-2xl"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             {t("footer.title")}
@@ -801,7 +801,7 @@ function Footer() {
           <div className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Portfolio. {t("footer.credit")}
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap justify-center gap-3">
             {[Github, Linkedin, Mail].map((Icon, i) => (
               <a
                 key={i}

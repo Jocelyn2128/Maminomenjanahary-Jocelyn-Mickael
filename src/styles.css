@@ -172,10 +172,36 @@
     color: var(--color-foreground);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    text-size-adjust: 100%;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  a,
+  span,
+  label,
+  input,
+  textarea,
+  button {
+    overflow-wrap: anywhere;
   }
 
   ::selection {
