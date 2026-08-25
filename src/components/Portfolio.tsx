@@ -754,10 +754,10 @@ function Nav() {
 }
 
 function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("light");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const { t } = useI18n();
   useEffect(() => {
-    const stored = (localStorage.getItem("theme") as "dark" | "light" | null) ?? "light";
+    const stored = (localStorage.getItem("theme") as "dark" | "light" | null) ?? "dark";
     setTheme(stored);
   }, []);
   const toggle = () => {
