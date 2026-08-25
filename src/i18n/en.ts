@@ -2,7 +2,7 @@ import type { Translations } from "./types"
 
 const en: Translations = {
   nav: {
-    brand: "Portfolio",
+    brand: "Mon porte folio",
     about: "About",
     stack: "Stack",
     journey: "Journey",

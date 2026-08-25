@@ -129,10 +129,10 @@ export default function Portfolio() {
   const { t } = useI18n();
 
   const stats = [
-    { value: "50+", label: t("about.stats.projects") },
-    { value: "20+", label: t("about.stats.technologies") },
-    { value: "4+", label: t("about.stats.experience") },
-    { value: "100%", label: t("about.stats.satisfaction") },
+    { value: "20+", label: t("about.stats.projects") },
+    { value: "13+", label: t("about.stats.technologies") },
+    { value: "2+", label: t("about.stats.experience") },
+    { value: "99%", label: t("about.stats.satisfaction") },
   ];
 
   const skills = [
@@ -260,7 +260,7 @@ export default function Portfolio() {
               className="text-4xl font-normal leading-none tracking-tight sm:text-6xl md:text-7xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              50<sup className="text-2xl align-super">+</sup>
+              20<sup className="text-2xl align-super">+</sup>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground md:max-w-xs">
               {t("hero.subtitle")}<br />
@@ -672,7 +672,6 @@ function Nav() {
           className="flex min-w-0 items-center gap-2 text-lg"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
-          <span className="shrink-0 text-base">✦</span>
           <span className="truncate italic">{t("nav.brand")}</span>
         </a>
         <div className="hidden min-w-0 items-center gap-4 px-2 py-1.5 md:flex lg:gap-6">
