@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import Portfolio from "@/components/Portfolio";
 import portrait from "@/assets/portrait.png";
 
-const SITE_URL = "https://slick-sync-studio.lovable.app";
+const SITE_ORIGIN = "https://jocelyn2128.github.io";
+const SITE_PATH = "/Maminomenjanahary-Jocelyn-Mickael";
+const SITE_URL = SITE_ORIGIN + SITE_PATH;
 const TITLE =
   "Portfolio — Full Stack Developer, Mobile & UI/UX Designer";
 const DESCRIPTION =
@@ -24,11 +26,11 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL + "/" },
-      { property: "og:image", content: SITE_URL + portrait },
+      { property: "og:image", content: SITE_ORIGIN + portrait },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
-      { name: "twitter:image", content: SITE_URL + portrait },
+      { name: "twitter:image", content: SITE_ORIGIN + portrait },
     ],
     links: [
       { rel: "canonical", href: SITE_URL + "/" },
@@ -36,7 +38,7 @@ export const Route = createFileRoute("/")({
         rel: "preload",
         as: "image",
         href: portrait,
-        fetchpriority: "high",
+        fetchPriority: "high",
       },
     ],
     scripts: [
@@ -48,7 +50,7 @@ export const Route = createFileRoute("/")({
           name: "Portfolio",
           jobTitle: "Full Stack Developer & UI/UX Designer",
           url: SITE_URL,
-          image: SITE_URL + portrait,
+          image: SITE_ORIGIN + portrait,
           address: {
             "@type": "PostalAddress",
             addressLocality: "Antananarivo",

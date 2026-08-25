@@ -4,7 +4,9 @@ const en: Translations = {
   nav: {
     brand: "Mon porte folio",
     about: "About",
+    skills: "Stack",
     stack: "Stack",
+    experience: "Journey",
     journey: "Journey",
     projects: "Projects",
     services: "Services",
