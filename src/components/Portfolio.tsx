@@ -663,6 +663,11 @@ export default function Portfolio() {
                 setContactStatus("sending");
 
                 try {
+                  const name = formData.get("name");
+                  const email = formData.get("email");
+                  const subject = formData.get("subject");
+                  const message = formData.get("message");
+
                   const response = await fetch(
                     "https://api.emailjs.com/api/v1.0/email/send",
                     {
@@ -675,10 +680,13 @@ export default function Portfolio() {
                         template_id: EMAILJS_TEMPLATE_ID,
                         user_id: EMAILJS_PUBLIC_KEY,
                         template_params: {
-                          from_name: formData.get("name"),
-                          from_email: formData.get("email"),
-                          subject: formData.get("subject"),
-                          message: formData.get("message"),
+                          name,
+                          email,
+                          title: subject,
+                          from_name: name,
+                          from_email: email,
+                          subject,
+                          message,
                           to_email: "mami2003nomenjanahary@gmail.com",
                         },
                       }),
@@ -686,7 +694,9 @@ export default function Portfolio() {
                   );
 
                   if (!response.ok) {
-                    throw new Error("EmailJS request failed");
+                    const errorText = await response.text();
+                    console.error("EmailJS request failed:", errorText);
+                    throw new Error(errorText);
                   }
 
                   form.reset();
