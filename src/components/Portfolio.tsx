@@ -100,6 +100,13 @@ type ExperienceItem = {
   description: string;
 };
 
+type ContactFormStatus =
+  "idle" | "sending" | "success" | "error" | "missing-config";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
 function useCursorGlow() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   useEffect(() => {
@@ -168,6 +175,7 @@ export default function Portfolio() {
   const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -100]);
   const cursor = useCursorGlow();
   const { t } = useI18n();
+  const [contactStatus, setContactStatus] = useState<ContactFormStatus>("idle");
 
   const stats = [
     { value: "20+", label: t("about.stats.projects") },
@@ -637,9 +645,55 @@ export default function Portfolio() {
         >
           <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(18rem,1fr)] md:gap-8">
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                alert(t("contact.form.success"));
+                setContactStatus("idle");
+
+                if (
+                  !EMAILJS_SERVICE_ID ||
+                  !EMAILJS_TEMPLATE_ID ||
+                  !EMAILJS_PUBLIC_KEY
+                ) {
+                  setContactStatus("missing-config");
+                  return;
+                }
+
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                setContactStatus("sending");
+
+                try {
+                  const response = await fetch(
+                    "https://api.emailjs.com/api/v1.0/email/send",
+                    {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({
+                        service_id: EMAILJS_SERVICE_ID,
+                        template_id: EMAILJS_TEMPLATE_ID,
+                        user_id: EMAILJS_PUBLIC_KEY,
+                        template_params: {
+                          from_name: formData.get("name"),
+                          from_email: formData.get("email"),
+                          subject: formData.get("subject"),
+                          message: formData.get("message"),
+                          to_email: "mami2003nomenjanahary@gmail.com",
+                        },
+                      }),
+                    },
+                  );
+
+                  if (!response.ok) {
+                    throw new Error("EmailJS request failed");
+                  }
+
+                  form.reset();
+                  setContactStatus("success");
+                } catch {
+                  setContactStatus("error");
+                }
               }}
               className="glass min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-6 md:p-8"
             >
@@ -667,17 +721,37 @@ export default function Portfolio() {
                 </label>
                 <textarea
                   required
+                  name="message"
                   rows={5}
                   placeholder={t("contact.form.messagePlaceholder")}
                   className="min-h-36 w-full resize-y rounded-xl border border-foreground/10 bg-foreground/5 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
                 />
               </div>
+              {contactStatus !== "idle" && (
+                <p
+                  role="status"
+                  className={`mt-4 text-sm ${
+                    contactStatus === "success"
+                      ? "text-primary"
+                      : "text-muted-foreground"
+                  }`}
+                >
+                  {contactStatus === "sending" && t("contact.form.sending")}
+                  {contactStatus === "success" && t("contact.form.success")}
+                  {contactStatus === "error" && t("contact.form.error")}
+                  {contactStatus === "missing-config" &&
+                    t("contact.form.missingConfig")}
+                </p>
+              )}
               <button
                 type="submit"
+                disabled={contactStatus === "sending"}
                 className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02] sm:w-auto"
                 style={{ boxShadow: "var(--shadow-glow)" }}
               >
-                {t("contact.form.submit")}
+                {contactStatus === "sending"
+                  ? t("contact.form.sendingButton")
+                  : t("contact.form.submit")}
                 <Send className="h-4 w-4" />
               </button>
             </form>

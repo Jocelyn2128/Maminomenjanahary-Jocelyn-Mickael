@@ -1,4 +1,4 @@
-import type { Translations } from "./types"
+import type { Translations } from "./types";
 
 const fr: Translations = {
   nav: {
@@ -33,8 +33,7 @@ const fr: Translations = {
     lineEm: "magnifier le code.",
     cta: "Voir le portfolio",
     subtitle: "Full Stack Developer, Mobile Engineer & UI/UX Designer.",
-    description:
-      "Chaque projet est livré avec clarté, précision et style.",
+    description: "Chaque projet est livré avec clarté, précision et style.",
     tech1: "React · Next.js · Node",
     tech2: "React Native · Expo",
     tech3: "Figma · Motion Design",
@@ -176,7 +175,13 @@ const fr: Translations = {
       message: "Message",
       messagePlaceholder: "Parlez-moi de votre projet...",
       submit: "Envoyer le message",
+      sendingButton: "Envoi en cours...",
+      sending: "Envoi du message en cours...",
       success: "Merci ! Votre message a bien été envoyé.",
+      error:
+        "Le message n'a pas pu être envoyé. Réessayez ou contactez-moi par email.",
+      missingConfig:
+        "Le service email n'est pas encore configuré. Ajoutez les variables EmailJS.",
     },
     details: {
       phone: "Téléphone",
@@ -188,6 +193,6 @@ const fr: Translations = {
     title: "Let's build together.",
     credit: "Conçu & développé avec passion.",
   },
-}
+};
 
-export default fr
+export default fr;

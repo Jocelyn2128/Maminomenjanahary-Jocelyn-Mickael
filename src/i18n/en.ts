@@ -1,4 +1,4 @@
-import type { Translations } from "./types"
+import type { Translations } from "./types";
 
 const en: Translations = {
   nav: {
@@ -176,7 +176,12 @@ const en: Translations = {
       message: "Message",
       messagePlaceholder: "Tell me about your project...",
       submit: "Send message",
+      sendingButton: "Sending...",
+      sending: "Sending your message...",
       success: "Thank you! Your message has been sent.",
+      error: "The message could not be sent. Please try again or email me.",
+      missingConfig:
+        "The email service is not configured yet. Add the EmailJS variables.",
     },
     details: {
       phone: "Phone",
@@ -188,6 +193,6 @@ const en: Translations = {
     title: "Let's build together.",
     credit: "Designed & developed with passion.",
   },
-}
+};
 
-export default en
+export default en;
