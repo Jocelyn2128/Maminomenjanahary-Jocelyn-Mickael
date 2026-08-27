@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jocelyn2128.github.io/Maminomenjanahary-Jocelyn-Mickael/sitemap.xml
