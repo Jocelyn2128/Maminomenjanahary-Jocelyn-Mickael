@@ -23,6 +23,7 @@ import {
   X,
 } from "lucide-react";
 import portrait from "@/assets/portrait.png";
+import logo from "@/assets/logo.png";
 import projHr from "@/assets/project-hr.jpg";
 import projKolo from "@/assets/project-kolo.png";
 import projMoodle from "@/assets/project-moodle.jpg";
@@ -898,10 +899,14 @@ function Nav() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <a
           href="#"
-          className="flex min-w-0 items-center gap-2 text-lg"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          className="flex min-w-0 items-center"
+          aria-label={t("nav.brand")}
         >
-          <span className="truncate italic">{t("nav.brand")}</span>
+          <img
+            src={logo}
+            alt={t("nav.brand")}
+            className="h-10 w-auto max-w-[132px] object-contain sm:h-12 sm:max-w-[156px]"
+          />
         </a>
         <div className="hidden min-w-0 items-center gap-4 px-2 py-1.5 md:flex lg:gap-6">
           {NAV_IDS.map((id) => (
